@@ -1,9 +1,57 @@
-<html>
-    <head>
-        
-    </head>
-    <body>
-        <h1>Prodaja Piv</h1>
-        
-    </body>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>eShop</title>
+
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+
+
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+
+
+    <script src="js/all.js"></script>
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+
+<body ng-app="app">
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 jumbotron">
+            <h1>eShop</h1>
+
+            <app-example></app-example>
+
+
+            <div class="well">
+                <!-- Navbar -->
+                <a ui-sref="home">Home</a>
+                <a ui-sref="login">Log In</a>
+                <a ui-sref="products">Products</a>
+                <a ui-sref="about">About us</a>
+                <a ui-sref="profile">Profile</a>
+
+                <!-- Linking to nested state -->
+                <a ui-sref="profile.setup">Profile settings</a>
+                <a ui-sref="profile.cart">Cart</a>
+
+                <!-- Linking to a state with added parameters -->
+                <a ui-sref="parameter({name: 'Bob'})">Go to state and pass Bob</a>
+            </div>
+
+
+            <!-- Load all templates and templateUrls from states into this directive -->
+            <div class="well">
+                <ui-view></ui-view>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
 </html>
